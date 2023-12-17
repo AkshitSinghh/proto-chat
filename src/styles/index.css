@@ -1,0 +1,13 @@
+:root {
+  --text: #ffffff;
+  --primary: #00bdaa;
+  --secondary: #a9f1df;
+  --accent: #001513;
+  --icon: #ffffff;
+  --icon-hover: #00f4db;
+  --textSecondary: #090304;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
