@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
     <RouterProvider router={router} />
     <ToastContainer
-      position="top-center"
+      position="top-left"
       autoClose={2000}
       theme="colored"
       style={{ height: "10px" }}
