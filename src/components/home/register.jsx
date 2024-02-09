@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { authRegister } from "../../utils/auth-utils";
-import "../../styles/routes/home.css";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -11,7 +10,7 @@ const Register = () => {
   return (
     <div>
       <form
-        className="flex flex-col space-y-14 p-9 max-w-[30rem]"
+        className="flex flex-col space-y-14 md:p-9 max-w-[30rem]"
         onSubmit={(e) => {
           e.preventDefault();
           authRegister(username, password, email);

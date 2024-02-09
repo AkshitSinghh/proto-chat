@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { authLogin } from "../../utils/auth-utils";
-import "../../styles/index.css";
-import "../../styles/routes/home.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +9,7 @@ const Login = () => {
   return (
     <div>
       <form
-        className="flex flex-col space-y-14 p-9"
+        className="flex flex-col space-y-14 md:p-9"
         onSubmit={(e) => {
           e.preventDefault();
           authLogin(email, password);
@@ -29,7 +27,7 @@ const Login = () => {
         />
         <div className="flex">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
             value={password}
             placeholder="Enter your password"

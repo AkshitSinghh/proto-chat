@@ -5,12 +5,15 @@ export default {
     extend: {
       colors: {
         text: "#ffffff",
-        primary: "#00bdaa",
+        primary: "#003049ff",
         secondary: "#4ecdc4",
-        accent: "#001513",
+        accent: "#171717",
         primaryV2: "#ff6b6b",
         secondaryV2: "#ffe66d",
         textSecondary: "#090304",
+        formBackground: "#262626",
+        icon: "#cbcbcb",
+        bottonBarAnimation: "#c7c7c78c",
       },
       fontSize: {
         sm: "0.750rem",
