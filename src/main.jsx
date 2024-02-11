@@ -31,7 +31,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       autoClose={2000}
       theme="colored"
       style={{ height: "10px" }}
-      pauseOnFocusLoss
       draggable
       transition:Bounce
     />

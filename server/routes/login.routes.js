@@ -14,11 +14,11 @@ router.route("/login").post(async (req, res) => {
 
       bcrypt.compare(req.body.password, user.password, (error, isValid) => {
         if (error) {
-          return res.status(200).json({ message: "Password Incorrect" });
+          return res.status(200).json({ message: "Incorrect Password" });
         }
 
         if (!isValid) {
-          return res.status(200).json({ message: "Password Incorrect" });
+          return res.status(200).json({ message: "Incorrect Password" });
         }
 
         const token = jwt.sign(
@@ -30,9 +30,12 @@ router.route("/login").post(async (req, res) => {
           { expiresIn: "1h" }
         );
 
-        res
-          .status(200)
-          .json({ message: "Login Successful", email: user.email, token });
+        res.status(202).json({
+          status: 202,
+          message: "Login Successful",
+          email: user.email,
+          token,
+        });
       });
     })
     .catch((error) => {
