@@ -12,7 +12,7 @@ export default {
         secondaryV2: "#ffe66d",
         textSecondary: "#090304",
         formBackground: "#262626",
-        icon: "#cbcbcb",
+        icon: "#ffffff",
         bottonBarAnimation: "#c7c7c78c",
       },
       fontSize: {

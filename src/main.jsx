@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Home from "./routes/home.jsx";
+import Chat from "./routes/chat.jsx";
 import {
   Navigate,
   RouterProvider,
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     path: "/home",
     element: <Home />,
   },
+  {
+    path: "/chat",
+    element: <Chat />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -29,7 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ToastContainer
       position="top-left"
       autoClose={2000}
-      theme="colored"
+      theme="light"
       style={{ height: "10px" }}
       draggable
       transition:Bounce
