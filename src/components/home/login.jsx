@@ -1,18 +1,35 @@
 import { useState } from "react";
 import { authLogin } from "../../utils/auth-utils";
+import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+const cookies = new Cookies();
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const login = async (e) => {
+    e.preventDefault();
+    const response = await authLogin(email, password);
+    if (response.status === 202) {
+      toast.success(response.data.message);
+      cookies.set("TOKEN", response.data.token, { path: "/" });
+      navigate("/chat");
+    } else {
+      toast.error(response.data.message);
+    }
+  };
 
   return (
     <div>
       <form
         className="flex flex-col space-y-14 md:p-9"
         onSubmit={(e) => {
-          e.preventDefault();
-          authLogin(email, password);
+          login(e);
         }}
       >
         <input

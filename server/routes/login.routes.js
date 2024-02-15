@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Users = require("../db/models/userRegisterModel");
+require("dotenv").config();
 
 const router = express.Router();
 
@@ -26,8 +27,8 @@ router.route("/login").post(async (req, res) => {
             userId: user._id,
             userEmail: user.email,
           },
-          "RANDOM-TOKEN",
-          { expiresIn: "1h" }
+          process.env.SECRET_TOKEN,
+          { expiresIn: process.env.JWT_EXPIRATION_TIME }
         );
 
         res.status(202).json({

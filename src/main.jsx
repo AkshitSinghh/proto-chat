@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Home from "./routes/home.jsx";
 import Chat from "./routes/chat.jsx";
+import Auth from "./components/authentication/auth.jsx";
 import {
   Navigate,
   RouterProvider,
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/chat",
-    element: <Chat />,
+    element: (
+      <Auth>
+        <Chat />
+      </Auth>
+    ),
   },
 ]);
 

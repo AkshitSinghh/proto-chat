@@ -4,6 +4,7 @@ require("dotenv").config();
 const connectDb = require("./db/dbConnect");
 const loginRouter = require("./routes/login.routes");
 const registerRouter = require("./routes/register.routes");
+const chatRouter = require("./routes/chat.routes");
 
 connectDb();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", registerRouter);
 app.use("/api", loginRouter);
+app.use("/api", chatRouter);
 
 app.listen(3000, () => {
   console.log("connected to server");
